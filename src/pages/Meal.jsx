@@ -5,12 +5,13 @@ import Spinner from "../components/Spinner";
 const Meal = () => {
     const [meal,setMeal] = useState(null);
     const [loading, setLoading] = useState(true);
-    const idMeal = useParams();
+    const idMeal = useParams().idMeal;
 
     useEffect(()=>{
         setLoading(true);
         try{
-            fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52803`)
+            console.log(idMeal)
+            fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
                 .then(res=>res.json())
                 .then(data=> setMeal(data.meals[0]));
         }catch(error){
