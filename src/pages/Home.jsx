@@ -26,9 +26,9 @@ const Home = () => {
     }
 
     return ( 
-        <section className="">
+        <section className="max-w-6xl mx-auto">
             <h1 className="w-full text-center text-4xl mb-10">The MealDB</h1>
-            <div className="max-w-6xl mx-auto grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
+            <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
                 { meals && meals.map((meal)=>(
                     <MealCard 
                         meal={meal}

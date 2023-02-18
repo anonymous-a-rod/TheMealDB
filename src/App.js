@@ -7,6 +7,7 @@ import Meal from './pages/Meal';
 import Team from './pages/Team';
 import About from './pages/About';
 import Error from './pages/Error';
+import FAQ from './pages/FAQ';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route exact path='/meal/:idMeal' element={<Meal />} />
             <Route exact path='/team' element={<Team />} />
             <Route exact path='/about' element={<About />} />
+            <Route exact path='/faq' element={<FAQ />} />
             <Route exact path='*' element={<Error />} />
           </Routes>
           <Footer />

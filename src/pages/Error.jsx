@@ -1,6 +1,6 @@
 const Error = () => {
     return ( 
-        <section>
+        <section className="max-w-6xl mx-auto">
             404, page not found
         </section>
      );

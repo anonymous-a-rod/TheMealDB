@@ -26,13 +26,14 @@ const Meal = () => {
     }
 
     return ( 
-        <>{ meal && 
-            <section className="max-w-6xl mx-auto flex flex-col items-center">
-                
-                <h2>{meal.strMeal}</h2>
-                <img src={meal.strMealThumb} alt={meal.strMeal} />
-            </section>
-        }
+        <>
+            { meal && 
+                <section className="max-w-6xl mx-auto flex flex-col items-center">
+                    
+                    <h2>{meal.strMeal}</h2>
+                    <img src={meal.strMealThumb} alt={meal.strMeal} />
+                </section>
+            }
         </>
      );
 }
