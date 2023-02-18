@@ -31,7 +31,8 @@ const RandomIngredients = () => {
                 {loading && <Spinner />}
                 {!loading && randomIngredients && randomIngredients.map((ingredient)=>(
                     <div className="flex flex-col items-center"
-                    onClick={()=>navigate(`../ingredient/${ingredient.strIngredient}`)} 
+                    onClick={()=>navigate(`../ingredient/${ingredient.strIngredient}`)}
+                    key={ingredient.strIngredient} 
                     >
                         <img src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`} alt={ingredient.strIngredient} />
                         <div className="font-bold text-xl mb-2">{ingredient.strIngredient}</div>

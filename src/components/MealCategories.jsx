@@ -32,6 +32,7 @@ const MealCategories = () => {
             {!loading && categories.map((category)=>(
                 <div className="flex items-center flex-col"
                 onClick={()=>navigate(`../category/${category.strCategory}`)} 
+                key={category.strCategory}
                 >
                     
                     <img src={category.strCategoryThumb} alt={category.strCategory} />

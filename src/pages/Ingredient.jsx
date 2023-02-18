@@ -41,20 +41,37 @@ const Ingredients = () => {
     useEffect(()=>{
         if(ingredientList !== undefined && ingredientList.length > 1){
             setCurrentIngredient(ingredientList.filter(item => item.strIngredient === ingredient));
-            setCurrentIngredientIndex(currentIngredient)
-            console.log(currentIngredient)
-            console.log(currentIngredientIndex)    
-        }
-       
+        } 
     },[ingredientList,ingredient])
 
+    useEffect(()=>{
+        if(currentIngredient){
+            setCurrentIngredientIndex(Number(currentIngredient[0].idIngredient))
+        } 
+    },[currentIngredient])
+
+    function prev(){
+        let index = Number(currentIngredientIndex) === 0 ? 574 : Number(currentIngredientIndex-1);
+        navigate(`../ingredient/${ingredientList[index].strIngredient}`)
+    }
+
+    function next(){
+        let index = Number(currentIngredientIndex) === 574 ? 0 : Number(currentIngredientIndex+1);
+        navigate(`../ingredient/${ingredientList[index].strIngredient}`)
+    }
+
     console.log(meals)
+    console.log(ingredientList)
+    console.log(currentIngredient)   
 
     return ( 
         <section className="max-w-6xl mx-auto">
-
             <h3 className="w-full text-center text-3xl mb-10">{ingredient}</h3>
-            <img src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`} alt={ingredient} />
+            <div className="flex flex-row items-center justify-center">
+                <button onClick={prev}>prev</button>
+                <img src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`} alt={ingredient} />
+                <button onClick={next}>Next</button>  
+            </div>    
             { currentIngredient && currentIngredient[0].strDescription}
             <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner/> }
