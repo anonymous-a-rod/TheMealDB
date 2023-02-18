@@ -18,6 +18,15 @@ const teamMembers = [
         linkedIn: "https://www.linkedin.com/in/alex-hessler-8b378a252/",
         id: 2
     },{
+        name: "Cliffton James",
+        pictureURL: "/assets/cliffton.jpg",
+        bio: "bio goes here",
+        website: "site goes here",
+        websiteHref: "",
+        github: "",
+        linkedIn: "https://www.linkedin.com/in/cliffton-james-02a8197b/",
+        id: 3
+    },{
         name: "Kamil Watson",
         pictureURL: "/assets/kamil.jpg",
         bio: "Talented graphic designer with print &amp; web design who is highly motivated, creative, and versatile. Specializing in creating corporate and new business design.",
@@ -25,7 +34,7 @@ const teamMembers = [
         websiteHref: "",
         github: "https://github.com/SayHelloToKam",
         linkedIn: "https://www.linkedin.com/in/kamilwatson/",
-        id: 3
+        id: 4
     },{
         name: "Kelsey Jackson",
         pictureURL: "/assets/kelsey.jpg",
@@ -34,7 +43,7 @@ const teamMembers = [
         websiteHref: "https://portfolio-react-project.netlify.app/",
         github: "https://github.com/kelso540",
         linkedIn: "https://www.linkedin.com/in/kelsey-jackson-22b098256/",
-        id: 4
+        id: 5
     },{
         name: "Michael Plantamura",
         pictureURL: "/assets/michael.jpg",
@@ -43,7 +52,7 @@ const teamMembers = [
         websiteHref: "https://michaelplant.netlify.app/",
         github: "https://github.com/Michaelplant2",
         linkedIn: "https://www.linkedin.com/in/michael-plantamura-458347223/",
-        id: 5
+        id: 6
     },
     
 ]
