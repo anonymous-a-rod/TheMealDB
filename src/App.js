@@ -9,6 +9,8 @@ import About from './pages/About';
 import Error from './pages/Error';
 import FAQ from './pages/FAQ';
 import Category from './pages/Category';
+import Ingredient from './pages/Ingredient';
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
             <Route exact path='/team' element={<Team />} />
             <Route exact path='/about' element={<About />} />
             <Route exact path='/category/:categoryName' element={<Category />} />
+            <Route exact path='/ingredient/:ingredient' element={<Ingredient />} />
             <Route exact path='/faq' element={<FAQ />} />
             <Route exact path='*' element={<Error />} />
           </Routes>

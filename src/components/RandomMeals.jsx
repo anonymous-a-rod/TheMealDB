@@ -21,15 +21,12 @@ const RandomMeals = () => {
 
     console.log(randomMeals)
 
-    if(loading){
-        return <Spinner />
-    }
-
     return ( 
         <section className="max-w-6xl mx-auto">
             <h3 className="w-full text-center text-3xl mb-10">Random Meal Selection</h3>
             <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
-                { randomMeals && randomMeals.map((meal)=>(
+                {loading && <Spinner />}
+                {!loading && randomMeals && randomMeals.map((meal)=>(
                     <MealCard 
                         meal={meal}
                         key={meal.idMeal}
