@@ -9,12 +9,13 @@ const MealCard = ({meal}) => {
 
     useEffect(()=>{
         let tempTags = meal.strTags
-        if(tempTags !== null){
+        if(tempTags !== null && tempTags !== "undefined"){
            tempTags = tempTags.split(',');
            tempTags = tempTags.filter(tag => tag.replaceAll(' ','') !== '#');
-
+        } else {
+            tempTags = null;
         }
-                setTags(tempTags)
+        setTags(tempTags)
     },[meal.strTags, meal])
 
     console.log(tags)
