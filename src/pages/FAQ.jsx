@@ -1,7 +1,7 @@
 const FAQ = () => {
     return ( 
         <section className="mx-auto max-w-6xl">
-            FAQ
+            FAQ - Alex Hessler
         </section>
      );
 }
