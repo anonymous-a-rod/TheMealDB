@@ -1,6 +1,6 @@
 const About = () => {
     return ( 
-        <section>
+        <section className="max-w-6xl mx-auto">
             About Page
         </section>
      );
