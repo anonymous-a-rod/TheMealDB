@@ -7,9 +7,12 @@ const Ingredients = () => {
 
     const [meals,setMeals] = useState(null);
     const [loading, setLoading] = useState(true);
-    const ingredient = useParams().ingredient;
+    const [ingredientList, setIngredientList] = useState([]);
+    const [currentIngredient, setCurrentIngredient] = useState(null);
+    const [currentIngredientIndex, setCurrentIngredientIndex] = useState(null);
+
     const navigate = useNavigate();
-    
+    const ingredient = useParams().ingredient;
 
     useEffect(()=>{
         setLoading(true);
@@ -24,17 +27,41 @@ const Ingredients = () => {
         setLoading(false);
     },[ingredient])
 
+    useEffect(()=>{
+        try{
+            fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
+                .then(res=>res.json())
+                .then(data=> setIngredientList(data.meals));
+        }catch(error){
+            console.log(error);
+        }
+        setLoading(false);
+    },[ingredient])
+
+    useEffect(()=>{
+        if(ingredientList !== undefined && ingredientList.length > 1){
+            setCurrentIngredient(ingredientList.filter(item => item.strIngredient === ingredient));
+            setCurrentIngredientIndex(currentIngredient)
+            console.log(currentIngredient)
+            console.log(currentIngredientIndex)    
+        }
+       
+    },[ingredientList,ingredient])
+
     console.log(meals)
 
     return ( 
         <section className="max-w-6xl mx-auto">
-            
+
             <h3 className="w-full text-center text-3xl mb-10">{ingredient}</h3>
+            <img src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`} alt={ingredient} />
+            { currentIngredient && currentIngredient[0].strDescription}
             <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner/> }
                 {!loading && meals && meals.map((meal)=>(
                     <div className="flex flex-col items-center"
                     onClick={()=>navigate(`../meal/${meal.idMeal}`)} 
+                    key={meal.strMeal}
                     >
                         <img src={meal.strMealThumb} alt={meal.strMeal} />
                         <label>{meal.strMeal}</label>
