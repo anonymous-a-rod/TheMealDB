@@ -7,7 +7,7 @@ const RandomMeals = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        if(randomMeals.length < 3){
+        if(randomMeals.length <= 3){
         try{
             fetch('https://www.themealdb.com/api/json/v1/1/random.php')
                 .then(res=>res.json())
@@ -26,7 +26,7 @@ const RandomMeals = () => {
             <h3 className="w-full text-center text-3xl mb-10">Random Meal Selection</h3>
             <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner />}
-                {!loading && randomMeals && randomMeals.map((meal)=>(
+                {!loading && randomMeals && randomMeals.slice(0,4).map((meal)=>(
                     <MealCard 
                         meal={meal}
                         key={meal.idMeal}
