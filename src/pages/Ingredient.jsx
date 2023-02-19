@@ -63,9 +63,9 @@ const Ingredients = () => {
     // console.log(ingredientList)
 
     return ( 
-        <section className="max-w-6xl mx-auto">
+        <section className="max-w-6xl mx-auto pl-10 pr-10">
             <h3 className="w-full text-center text-5xl mb-10">{ingredient}</h3>
-            <div className="flex flex-row items-center justify-center mb-10 ">
+            <div className="flex flex-row items-center justify-center mb-10 ml-10 mr-10">
                 <button className="text-6xl" onClick={prev}>
                     <GrPrevious /> 
                 </button>
@@ -74,7 +74,7 @@ const Ingredients = () => {
                     <GrNext />    
                 </button>  
             </div>    
-            { currentIngredient && <p className="mb-10">{currentIngredient[0].strDescription}</p>}
+            { currentIngredient && <p className="mb-10 text-center">{currentIngredient[0].strDescription}</p>}
             <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center mt-10">
                 {loading && <Spinner/> }
                 {!loading && meals && meals.map((meal)=>(
