@@ -30,6 +30,7 @@ const Popular = () => {
         function addMainIgredient(ingredient){
             setMainIngredients(prev => [...prev,...filterIngredients(ingredient)]);
         }
+        
             addMainIgredient("Chicken");
             addMainIgredient("Salmon");
             addMainIgredient("Beef");
@@ -40,7 +41,7 @@ const Popular = () => {
         // console.log(mainIngredients);
         
         setLoading(false);
-    },[ingredientList, mainIngredients])
+    },[ingredientList, mainIngredients.length])
 
 
 

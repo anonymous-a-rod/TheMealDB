@@ -14,7 +14,7 @@ const RandomIngredients = () => {
         try{
             fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
                 .then(res=>res.json())
-                .then(data=> setRandomIngredients([data.meals[randomNumber],data.meals[randomNumber*2],data.meals[randomNumber*3],data.meals[randomNumber*4]]));
+                .then(data=> setRandomIngredients([data.meals[randomNumber],data.meals[randomNumber*2+1],data.meals[randomNumber*3+1],data.meals[randomNumber*4+1]]));
         }catch(error){
             console.log(error);
         }

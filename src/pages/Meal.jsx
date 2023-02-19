@@ -10,7 +10,6 @@ const Meal = () => {
     useEffect(()=>{
         setLoading(true);
         try{
-            console.log(idMeal)
             fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
                 .then(res=>res.json())
                 .then(data=> setMeal(data.meals[0]));
