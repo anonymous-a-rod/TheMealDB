@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import MealCategories from "../components/MealCategories";
 import Spinner from "../components/Spinner";
 
 
@@ -14,7 +15,6 @@ const Category = () => {
     useEffect(()=>{
         setLoading(true);
         try{
-            console.log(categoryName)
             fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`)
                 .then(res=>res.json())
                 .then(data=> setMeals(data.meals));
@@ -24,7 +24,7 @@ const Category = () => {
         setLoading(false);
     },[categoryName])
 
-    console.log(meals)
+    // console.log(meals)
 
     return ( 
         <section className="max-w-6xl mx-auto">
@@ -34,12 +34,14 @@ const Category = () => {
                 {!loading && meals && meals.map((meal)=>(
                     <div className="flex flex-col h-full items-center justify-start"
                     onClick={()=>navigate(`../meal/${meal.idMeal}`)} 
+                    key={meal.idMeal}
                     >
                         <img src={meal.strMealThumb} alt={meal.strMeal} />
                         <label className="text-center">{meal.strMeal}</label>
                     </div>
                 ))}
             </div>
+            <MealCategories />
         </section>
      );
 }

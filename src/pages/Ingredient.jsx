@@ -17,7 +17,6 @@ const Ingredients = () => {
     useEffect(()=>{
         setLoading(true);
         try{
-            console.log(ingredient)
             fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
                 .then(res=>res.json())
                 .then(data=> setMeals(data.meals));
@@ -48,12 +47,9 @@ const Ingredients = () => {
         if(currentIngredient){
             setCurrentIngredientIndex(ingredientList.indexOf(currentIngredient[0]))
         } 
-        
-
     },[currentIngredient, ingredientList])
 
     function prev(){
-        console.log("index ghj " + currentIngredientIndex)
         let index = currentIngredientIndex <= 0 ? ingredientList.length-1 : Number(currentIngredientIndex-1);
         navigate(`../ingredient/${ingredientList[index].strIngredient}`)
     }
@@ -62,6 +58,8 @@ const Ingredients = () => {
         let index = currentIngredientIndex === ingredientList.length-1 ? 0 : Number(currentIngredientIndex)+1;
         navigate(`../ingredient/${ingredientList[index].strIngredient}`)
     }
+
+    console.log(ingredientList)
 
     return ( 
         <section className="max-w-6xl mx-auto">

@@ -7,8 +7,10 @@ const Team = () => {
         <section className="max-w-6xl mx-auto flex flex-col justify-center items-center">
             <h2 className="text-4xl pb-8">Our Team</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {data.map((item) => (
-                <article className="flexcflex-col justify-between border border-gray-400 rounded-md max-w-xs flex flex-col items-center relative">
+            {data.map((item, index) => (
+                <article className="flexcflex-col justify-between border border-gray-400 rounded-md max-w-xs flex flex-col items-center relative"
+                    key={index}
+                >
                     <div className="flex flex-col items-center p-4">
                         <img src={item.pictureURL} alt={item.name} className="w-full mb-2 max-h-[200px] object-cover rounded-md " />
                         <h3 className="text-lg font-medium">{item.name}</h3>
