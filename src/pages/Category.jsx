@@ -27,7 +27,7 @@ const Category = () => {
     // console.log(meals)
 
     return ( 
-        <section className="max-w-6xl mx-auto">
+        <section className="max-w-6xl mx-auto pl-10 pr-10">
             <h3 className="w-full text-center text-3xl mb-10">{categoryName}</h3>
             <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner/> }
