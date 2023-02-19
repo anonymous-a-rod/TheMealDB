@@ -27,10 +27,10 @@ const MealCategories = () => {
     return ( 
         <section className="max-w-6xl mx-auto mt-10 mb-10">
             <h3 className="w-full text-center text-3xl mb-10">Meal Categories</h3>
-            <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-center items-center">
             {loading && <Spinner />}
             {!loading && categories.map((category)=>(
-                <div className="flex items-center flex-col"
+                <div className="flex items-center flex-col cursor-pointer"
                 onClick={()=>navigate(`../category/${category.strCategory}`)} 
                 key={category.strCategory}
                 >
