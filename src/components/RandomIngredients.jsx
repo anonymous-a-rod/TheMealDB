@@ -22,7 +22,7 @@ const RandomIngredients = () => {
         setLoading(false);
     },[])
 
-    console.log(randomIngredients)
+    // console.log(randomIngredients)
 
     return ( 
         <section className="max-w-6xl mx-auto">

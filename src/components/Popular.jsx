@@ -23,28 +23,28 @@ const Popular = () => {
     },[])
 
     useEffect(()=>{
+        if(mainIngredients.length < 4){
         function filterIngredients(ingredient){
             return ingredientList.filter((item)=>(item.strIngredient === ingredient))
         }
         function addMainIgredient(ingredient){
             setMainIngredients(prev => [...prev,...filterIngredients(ingredient)]);
         }
-        if(mainIngredients.length < 4){
             addMainIgredient("Chicken");
             addMainIgredient("Salmon");
             addMainIgredient("Beef");
             addMainIgredient("Pork");     
         }
         
-        console.log("main ingredients")
-        console.log(mainIngredients);
+        // console.log("main ingredients")
+        // console.log(mainIngredients);
         
         setLoading(false);
     },[ingredientList, mainIngredients])
 
 
 
-    console.log(mainIngredients)
+    // console.log(mainIngredients)
 
 
     return ( 

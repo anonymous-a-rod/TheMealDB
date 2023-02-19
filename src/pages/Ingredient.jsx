@@ -46,23 +46,22 @@ const Ingredients = () => {
 
     useEffect(()=>{
         if(currentIngredient){
-            setCurrentIngredientIndex(Number(currentIngredient[0].idIngredient))
+            setCurrentIngredientIndex(ingredientList.indexOf(currentIngredient[0]))
         } 
-    },[currentIngredient])
+        
+
+    },[currentIngredient, ingredientList])
 
     function prev(){
-        let index = Number(currentIngredientIndex) === 0 ? 574 : Number(currentIngredientIndex-1);
+        console.log("index ghj " + currentIngredientIndex)
+        let index = currentIngredientIndex <= 0 ? ingredientList.length-1 : Number(currentIngredientIndex-1);
         navigate(`../ingredient/${ingredientList[index].strIngredient}`)
     }
 
     function next(){
-        let index = Number(currentIngredientIndex) === 574 ? 0 : Number(currentIngredientIndex+1);
+        let index = currentIngredientIndex === ingredientList.length-1 ? 0 : Number(currentIngredientIndex)+1;
         navigate(`../ingredient/${ingredientList[index].strIngredient}`)
     }
-
-    console.log(meals)
-    console.log(ingredientList)
-    console.log(currentIngredient)   
 
     return ( 
         <section className="max-w-6xl mx-auto">

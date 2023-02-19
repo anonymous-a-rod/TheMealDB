@@ -21,7 +21,7 @@ const MealCategories = () => {
         setLoading(false);
     },[])
 
-    console.log(categories)
+    // console.log(categories)
 
 
     return ( 
@@ -34,7 +34,6 @@ const MealCategories = () => {
                 onClick={()=>navigate(`../category/${category.strCategory}`)} 
                 key={category.strCategory}
                 >
-                    
                     <img src={category.strCategoryThumb} alt={category.strCategory} />
                     <div className="font-bold text-xl mb-2">{category.strCategory}</div>
                     
