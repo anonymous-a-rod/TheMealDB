@@ -21,16 +21,17 @@ const RandomMeals = () => {
         setLoading(false);
     },[randomMeals])
 
-    console.log(randomMeals)
+    // console.log(randomMeals)
 
     return ( 
         <section className="max-w-6xl mx-auto">
             <h3 className="w-full text-center text-3xl mb-10">Random Meal Selection</h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                 {loading && <Spinner />}
-                {!loading && randomMeals && randomMeals.slice(0,4).map((meal)=>(
+                {!loading && randomMeals && randomMeals.slice(0,4).map((meal,index)=>(
                     <div className="flex flex-col h-full w-full cursor-pointer"
                     onClick={()=>navigate(`../meal/${meal.idMeal}`)} 
+                    key={index}
                     >
                         <img className=" object-cover" src={meal.strMealThumb} alt={meal.strMeal} />
                         <div className="text-center">
