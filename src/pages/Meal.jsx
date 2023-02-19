@@ -34,6 +34,7 @@ const Meal = () => {
                     <img src={meal.strMealThumb} alt={meal.strMeal} />
                 </section>
             }
+            <div></div>
         </>
      );
 }
