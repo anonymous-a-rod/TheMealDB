@@ -49,7 +49,7 @@ const Popular = () => {
 
 
     return ( 
-        <section className="max-w-6xl mx-auto mt-10 mb-10">
+        <section className="max-w-6xl mx-auto mt-10 mb-10  pl-10 pr-10">
             <h3 className="w-full text-center text-3xl mb-10">Popular Ingredients</h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center">
             {loading && <Spinner />}

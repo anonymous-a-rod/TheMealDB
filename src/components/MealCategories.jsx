@@ -25,7 +25,7 @@ const MealCategories = () => {
 
 
     return ( 
-        <section className="max-w-6xl mx-auto mt-10 mb-10">
+        <section className="max-w-6xl mx-auto mt-10 mb-10 pl-10 pr-10">
             <h3 className="w-full text-center text-3xl mb-10">Meal Categories</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-center items-center">
             {loading && <Spinner />}
@@ -35,8 +35,7 @@ const MealCategories = () => {
                 key={category.strCategory}
                 >
                     <img src={category.strCategoryThumb} alt={category.strCategory} />
-                    <div className="font-bold text-xl mb-2">{category.strCategory}</div>
-                    
+                    <div className="font-bold text-xl mb-2 text-center w-full">{category.strCategory}</div>  
                 </div>
             ))}
             </div>

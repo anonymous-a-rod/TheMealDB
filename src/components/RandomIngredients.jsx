@@ -25,7 +25,7 @@ const RandomIngredients = () => {
     // console.log(randomIngredients)
 
     return ( 
-        <section className="max-w-6xl mx-auto">
+        <section className="max-w-6xl mx-auto pl-10 pr-10">
             <h3 className="w-full text-center text-3xl mb-10">Random Ingredients</h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner />}
@@ -35,7 +35,7 @@ const RandomIngredients = () => {
                     key={ingredient.strIngredient} 
                     >
                         <img src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`} alt={ingredient.strIngredient} />
-                        <div className="font-bold text-xl mb-2">{ingredient.strIngredient}</div>
+                        <div className="font-bold text-xl mb-2 w-fill text-center">{ingredient.strIngredient}</div>
                     </div>
                 ))}
             </div>

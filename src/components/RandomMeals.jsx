@@ -9,7 +9,7 @@ const RandomMeals = () => {
     const navigate = useNavigate();
 
     useEffect(()=>{
-        if(randomMeals.length <= 3){
+        if(randomMeals.length <= 5){
         try{
             fetch('https://www.themealdb.com/api/json/v1/1/random.php')
                 .then(res=>res.json())
@@ -24,11 +24,11 @@ const RandomMeals = () => {
     // console.log(randomMeals)
 
     return ( 
-        <section className="max-w-6xl mx-auto">
+        <section className="max-w-6xl mx-auto pl-10 pr-10">
             <h3 className="w-full text-center text-3xl mb-10">Random Meal Selection</h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                 {loading && <Spinner />}
-                {!loading && randomMeals && randomMeals.slice(0,4).map((meal,index)=>(
+                {!loading && randomMeals && [...new Set(randomMeals)].slice(0,4).map((meal,index)=>(
                     <div className="flex flex-col h-full w-full cursor-pointer"
                     onClick={()=>navigate(`../meal/${meal.idMeal}`)} 
                     key={index}

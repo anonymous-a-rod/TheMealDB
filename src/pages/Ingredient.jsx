@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import { GrPrevious, GrNext } from "react-icons/gr"
 
 
 const Ingredients = () => {
@@ -59,18 +60,22 @@ const Ingredients = () => {
         navigate(`../ingredient/${ingredientList[index].strIngredient}`)
     }
 
-    console.log(ingredientList)
+    // console.log(ingredientList)
 
     return ( 
         <section className="max-w-6xl mx-auto">
-            <h3 className="w-full text-center text-3xl mb-10">{ingredient}</h3>
-            <div className="flex flex-row items-center justify-center mb-10">
-                <button onClick={prev}>prev</button>
+            <h3 className="w-full text-center text-5xl mb-10">{ingredient}</h3>
+            <div className="flex flex-row items-center justify-center mb-10 ">
+                <button className="text-6xl" onClick={prev}>
+                    <GrPrevious /> 
+                </button>
                 <img src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`} alt={ingredient} />
-                <button onClick={next}>Next</button>  
+                <button  className="text-6xl" onClick={next}>
+                    <GrNext />    
+                </button>  
             </div>    
             { currentIngredient && <p className="mb-10">{currentIngredient[0].strDescription}</p>}
-            <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
+            <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center mt-10">
                 {loading && <Spinner/> }
                 {!loading && meals && meals.map((meal)=>(
                     <div className="flex flex-col items-center h-full justify-start"
