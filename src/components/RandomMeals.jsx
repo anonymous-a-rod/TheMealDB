@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import MealCard from "../components/MealCard";
+import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
 const RandomMeals = () => {
     const [randomMeals, setRandomMeals] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const navigate = useNavigate();
 
     useEffect(()=>{
         if(randomMeals.length <= 3){
@@ -24,13 +26,17 @@ const RandomMeals = () => {
     return ( 
         <section className="max-w-6xl mx-auto">
             <h3 className="w-full text-center text-3xl mb-10">Random Meal Selection</h3>
-            <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                 {loading && <Spinner />}
                 {!loading && randomMeals && randomMeals.slice(0,4).map((meal)=>(
-                    <MealCard 
-                        meal={meal}
-                        key={meal.idMeal}
-                    />
+                    <div className="flex flex-col h-full w-full cursor-pointer"
+                    onClick={()=>navigate(`../meal/${meal.idMeal}`)} 
+                    >
+                        <img className=" object-cover" src={meal.strMealThumb} alt={meal.strMeal} />
+                        <div className="text-center">
+                            <div className="font-bold text-xl mb-2">{meal.strMeal}</div>
+                        </div>
+                    </div>
                 ))}
             </div>
         </section>

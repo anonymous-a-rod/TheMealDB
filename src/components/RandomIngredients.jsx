@@ -27,10 +27,10 @@ const RandomIngredients = () => {
     return ( 
         <section className="max-w-6xl mx-auto">
             <h3 className="w-full text-center text-3xl mb-10">Random Ingredients</h3>
-            <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner />}
                 {!loading && randomIngredients && randomIngredients.map((ingredient)=>(
-                    <div className="flex flex-col items-center"
+                    <div className="flex flex-col items-center  cursor-pointer"
                     onClick={()=>navigate(`../ingredient/${ingredient.strIngredient}`)}
                     key={ingredient.strIngredient} 
                     >
