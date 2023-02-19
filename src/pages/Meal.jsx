@@ -19,7 +19,7 @@ const Meal = () => {
         setLoading(false);
     },[idMeal])
 
-    console.log(meal)
+    // console.log(meal)
 
     if(loading){
         return <Spinner />
