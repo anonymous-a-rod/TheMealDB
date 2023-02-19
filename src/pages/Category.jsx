@@ -32,11 +32,11 @@ const Category = () => {
             <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner/> }
                 {!loading && meals && meals.map((meal)=>(
-                    <div className="flex flex-col items-center"
+                    <div className="flex flex-col h-full items-center justify-start"
                     onClick={()=>navigate(`../meal/${meal.idMeal}`)} 
                     >
                         <img src={meal.strMealThumb} alt={meal.strMeal} />
-                        <label>{meal.strMeal}</label>
+                        <label className="text-center">{meal.strMeal}</label>
                     </div>
                 ))}
             </div>

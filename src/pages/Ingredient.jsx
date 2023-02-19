@@ -67,21 +67,21 @@ const Ingredients = () => {
     return ( 
         <section className="max-w-6xl mx-auto">
             <h3 className="w-full text-center text-3xl mb-10">{ingredient}</h3>
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex flex-row items-center justify-center mb-10">
                 <button onClick={prev}>prev</button>
                 <img src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`} alt={ingredient} />
                 <button onClick={next}>Next</button>  
             </div>    
-            { currentIngredient && currentIngredient[0].strDescription}
+            { currentIngredient && <p className="mb-10">{currentIngredient[0].strDescription}</p>}
             <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner/> }
                 {!loading && meals && meals.map((meal)=>(
-                    <div className="flex flex-col items-center"
+                    <div className="flex flex-col items-center h-full justify-start"
                     onClick={()=>navigate(`../meal/${meal.idMeal}`)} 
                     key={meal.strMeal}
                     >
                         <img src={meal.strMealThumb} alt={meal.strMeal} />
-                        <label>{meal.strMeal}</label>
+                        <label className="text-center">{meal.strMeal}</label>
                     </div>
                 ))}
             </div>
