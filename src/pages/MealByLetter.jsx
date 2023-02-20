@@ -1,5 +1,4 @@
 import React from 'react';
-import MealByLetterSection from '../components/MealByLetterSection';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from 'axios'; 
@@ -58,7 +57,7 @@ export default function MealByLetter() {
             </div>
             :null}
         </section>
-        
+
     </div>
   )
 }
