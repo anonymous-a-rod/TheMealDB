@@ -4,16 +4,22 @@ import { useEffect, useState } from "react";
 import axios from 'axios'; 
 import { useNavigate } from 'react-router-dom/dist';
 import Spinner from '../components/Spinner';
+import MealByLetterSection from '../components/MealByLetterSection';
 
 export default function MealByLetter() {
 
-    const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    const letter = useParams().curr;
+   
+    let letter = useParams().curr;
+    console.log(letter);
     const [meals, setMeals] = useState([]);   
     const navigate = useNavigate(); 
     const [display, setDisplay] = useState(true);
-    const [letterState, setLetterState] = useState(letter);  
+    const [letterState, setLetterState] = useState(null);  
     
+    useEffect(()=>{
+        setLetterState(letter)
+    },[letter])
+
     useEffect(()=>{
         async function getData (){
             setDisplay(false);
@@ -45,20 +51,7 @@ export default function MealByLetter() {
             :<p className='text-3xl text-center mb-8'>No Meals that start with {letterState}</p>}
         </div>
         :<Spinner />}
-
-        <section>
-            <h1 className='text-center text-3xl my-10'>Meals by Letter</h1>
-            {(display)?<div className='flex justify-center cursor-pointer text-2xl gap-2'>
-                  {letters.map((item, index)=>{
-                      return <div key={item} className='flex justify-center gap-2'>
-                          <p onClick={()=>setLetterState(item)} className='hover:text-red-400'>{item}</p>
-                          {(index===letters.length-1)?null:<p>/</p>}
-                        </div>
-                  })}
-            </div>
-            :null}
-        </section>
-
+        <MealByLetterSection />
     </div>
   )
 }
