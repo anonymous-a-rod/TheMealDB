@@ -22,6 +22,7 @@ export default function MealByLetter() {
             setDisplay(true);
         };
         getData().catch(err=>console.log(err)); 
+
     },[letterState]); 
     
 
