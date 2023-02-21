@@ -36,7 +36,7 @@ const Ingredients = () => {
             console.log(error);
         }
         setLoading(false);
-    },[ingredient])
+    },[])
 
     useEffect(()=>{
         if(ingredientList !== undefined && ingredientList.length > 1){
