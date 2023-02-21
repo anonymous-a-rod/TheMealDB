@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { hasFlag } from 'country-flag-icons'
+import { countries } from 'country-flag-icons'
 
 export default function MealByCountry() {
 
@@ -22,7 +24,8 @@ export default function MealByCountry() {
     <div className='flex justify-center flex-wrap cursor-pointer text-2xl gap-2'>
         {
             area && area.map(item=>{
-                return <img src={``}
+                return <img src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg`}
+
                 className=''
                 alt={item.strArea} 
                 key={item.strArea} 
