@@ -17,8 +17,8 @@ export default function MealByLetter() {
     const [letterState, setLetterState] = useState(null);  
     
     useEffect(()=>{
-        setLetterState(letter)
-    },[letter])
+        setLetterState(letter);
+    },[letter]);
 
     useEffect(()=>{
         async function getData (){

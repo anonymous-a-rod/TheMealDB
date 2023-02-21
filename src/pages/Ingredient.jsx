@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import { GrPrevious, GrNext } from "react-icons/gr"
+import { GrPrevious, GrNext } from "react-icons/gr"; 
+import axios from 'axios'; 
+
 
 
 const Ingredients = () => {
@@ -16,27 +18,39 @@ const Ingredients = () => {
     const ingredient = useParams().ingredient;
 
     useEffect(()=>{
-        setLoading(true);
-        try{
-            fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
-                .then(res=>res.json())
-                .then(data=> setMeals(data.meals));
-        }catch(error){
-            console.log(error);
+        const getData = async ()=>{
+            setLoading(true);
+            const filterData = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`); 
+            const listData = await axios.get('https://www.themealdb.com/api/json/v1/1/list.php?i=list'); 
+            setMeals(filterData.data.meals);
+            setIngredientList(listData.data.meals);
+            setLoading(false);
         }
-        setLoading(false);
-    },[ingredient])
+        getData().catch(err=>console.log(err)); 
+    }, [ingredient]);
 
-    useEffect(()=>{
-        try{
-            fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
-                .then(res=>res.json())
-                .then(data=> setIngredientList(data.meals));
-        }catch(error){
-            console.log(error);
-        }
-        setLoading(false);
-    },[ingredient])
+    // useEffect(()=>{
+    //     setLoading(true);
+    //     try{
+    //         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+    //             .then(res=>res.json())
+    //             .then(data=> setMeals(data.meals));
+    //     }catch(error){
+    //         console.log(error);
+    //     }
+    //     setLoading(false);
+    // },[ingredient])
+
+    // useEffect(()=>{
+    //     try{
+    //         fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
+    //             .then(res=>res.json())
+    //             .then(data=> setIngredientList(data.meals));
+    //     }catch(error){
+    //         console.log(error);
+    //     }
+    //     setLoading(false);
+    // },[ingredient])
 
     useEffect(()=>{
         if(ingredientList !== undefined && ingredientList.length > 1){
@@ -56,7 +70,7 @@ const Ingredients = () => {
     }
 
     function next(){
-        let index = currentIngredientIndex === ingredientList.length-1 ? 0 : Number(currentIngredientIndex)+1;
+        let index = currentIngredientIndex === ingredientList.length-1 ? 0 : Number(currentIngredientIndex+1);
         navigate(`../ingredient/${ingredientList[index].strIngredient}`)
     }
 
