@@ -11,6 +11,7 @@ import FAQ from './pages/FAQ';
 import Category from './pages/Category';
 import Ingredient from './pages/Ingredient';
 import MealByLetter from './pages/MealByLetter';
+import Country from './pages/Country';
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route exact path='/about' element={<About />} />
             <Route exact path='/category/:categoryName' element={<Category />} />
             <Route exact path='/ingredient/:ingredient' element={<Ingredient />} />
+            <Route exact path='/country/:area' element={<Country />} />
             <Route exact path='/letter/:curr' element={<MealByLetter />} />
             <Route exact path='/faq' element={<FAQ />} />
             <Route exact path='*' element={<Error />} />

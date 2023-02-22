@@ -10,32 +10,24 @@ export default function MealByLetter() {
 
    
     let letter = useParams().curr;
-    console.log(letter);
     const [meals, setMeals] = useState([]);   
     const navigate = useNavigate(); 
-    const [display, setDisplay] = useState(true);
-    const [letterState, setLetterState] = useState(null);  
-    
-    useEffect(()=>{
-        setLetterState(letter)
-    },[letter])
+    const [display, setDisplay] = useState(true); 
 
     useEffect(()=>{
         async function getData (){
             setDisplay(false);
-            const data = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letterState}`)
+            const data = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
             setMeals(data.data.meals);
             setDisplay(true);
         };
         getData().catch(err=>console.log(err)); 
-
-    },[letterState]); 
+    },[letter]); 
     
-
   return (
     <div>{(display)?
         <div className="max-w-6xl mx-auto">
-            <h1 className='text-3xl text-center mb-8'>Recipes that start with {letterState}</h1>
+            <h1 className='text-3xl text-center mb-8'>Recipes that start with {letter}</h1>
             {(Array.isArray(meals))?<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center'>
                 { 
                     meals.map((item, index)=>{
@@ -48,7 +40,7 @@ export default function MealByLetter() {
                     }) 
                 }
             </div>
-            :<p className='text-3xl text-center mb-8'>No Meals that start with {letterState}</p>}
+            :<p className='text-3xl text-center mb-8'>No Meals that start with {letter}</p>}
         </div>
         :<Spinner />}
         <MealByLetterSection />

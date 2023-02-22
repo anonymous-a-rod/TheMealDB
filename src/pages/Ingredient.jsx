@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import { GrPrevious, GrNext } from "react-icons/gr"
+import { GrPrevious, GrNext } from "react-icons/gr"; 
+
 
 
 const Ingredients = () => {
@@ -56,7 +57,7 @@ const Ingredients = () => {
     }
 
     function next(){
-        let index = currentIngredientIndex === ingredientList.length-1 ? 0 : Number(currentIngredientIndex)+1;
+        let index = currentIngredientIndex === ingredientList.length-1 ? 0 : Number(currentIngredientIndex+1);
         navigate(`../ingredient/${ingredientList[index].strIngredient}`)
     }
 

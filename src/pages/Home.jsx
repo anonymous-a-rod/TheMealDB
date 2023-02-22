@@ -1,3 +1,4 @@
+import MealByCountry from "../components/MealByCountry";
 import MealByLetterSection from "../components/MealByLetterSection";
 import MealCategories from "../components/MealCategories";
 import Popular from "../components/Popular";
@@ -14,6 +15,7 @@ const Home = () => {
             <Popular />    
             <MealCategories />
             <RandomIngredients />
+            <MealByCountry />
             <MealByLetterSection />
         </section>
      );
