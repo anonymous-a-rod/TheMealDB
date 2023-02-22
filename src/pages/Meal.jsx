@@ -60,7 +60,7 @@ const Meal = () => {
                         return (
                         <>
                             {index && meal[`strMeasure${index}`] && meal[`strIngredient${index}`] &&
-                            <div className="flex flex-col h-full justify-start flex-center">
+                            <div className="flex flex-col h-full justify-start flex-center" key={index*Math.floor(Math.random()*1000)} >
                                 <img 
                                     src={`https://www.themealdb.com/images/ingredients/${meal[`strIngredient${index}`]}.png`} 
                                     alt={meal.strIngredient1}
