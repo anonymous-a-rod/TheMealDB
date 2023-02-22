@@ -27,10 +27,12 @@ const Meal = () => {
   },[idMeal, param])
 
   useEffect(()=>{
-    if(meal){
+    if(meal.strTags && meal.strTags !== " "){
        setTags(meal.strTags.split(",")) 
-       setInstructions(meal.strInstructions.split(".")) 
     }
+    if(meal.strInstructions && meal.strInstructions !== " "){
+        setInstructions(meal.strInstructions.split(".")) 
+     }
   },[meal])
 
   console.log(meal)
