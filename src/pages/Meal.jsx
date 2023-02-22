@@ -10,33 +10,34 @@ const Meal = () => {
   const [tags, setTags] = useState([]);
   const [instructions, setInstructions] = useState([]);
   const array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-  const param = useParams().idMeal;
+  const idMeal = useParams().idMeal;
 
 
 
   useEffect(()=>{
       setLoading(true);
       try{
-          fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${param}`)
+          fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
               .then(res=>res.json())
               .then(data=> setMeal(data.meals[0]));
       }catch(error){
           console.log(error);
       }
       setLoading(false);
-  },[idMeal, param])
+  },[idMeal])
 
   useEffect(()=>{
-    if(meal.strTags && meal.strTags !== " "){
-       setTags(meal.strTags.split(",")) 
+    if(meal){
+        if(meal.strTags && meal.strTags !== " " && meal.strTags !== null){
+        setTags(meal.strTags.split(",")) 
+        }
+        if(meal.strInstructions && meal.strInstructions !== " "){
+            setInstructions(meal.strInstructions.split(".")) 
+        }
     }
-    if(meal.strInstructions && meal.strInstructions !== " "){
-        setInstructions(meal.strInstructions.split(".")) 
-     }
   },[meal])
 
-  console.log(meal)
-  console.log(tags)
+//   console.log(meal)
 
   if(loading){
       return <Spinner />

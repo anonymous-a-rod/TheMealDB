@@ -27,7 +27,7 @@ export default function MealByLetter() {
   return (
     <div>{(display)?
         <div className="max-w-6xl mx-auto">
-            <h1 className='text-3xl text-center mb-8'>Recipes that start with {letter}</h1>
+            <h1 className='text-4xl text-center mb-8'>Recipes that start with {letter}</h1>
             {(Array.isArray(meals))?<div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center'>
                 { 
                     meals.map((item, index)=>{

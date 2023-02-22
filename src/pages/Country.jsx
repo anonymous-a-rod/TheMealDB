@@ -23,13 +23,13 @@ export default function Country() {
     }, [country]);
 
   return (
-    <section>
-        <h1>{country} Meals</h1>
+    <section className="max-w-6xl mx-auto mt-10 mb-10 pl-10 pr-10">
+        <h1 className='w-full text-center text-4xl pb-8'>{country} Meals</h1>
         {(display)?<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center'>
         { 
             meals.map((item, index)=>{
                 return <div key={item + index} 
-                className='max-w-xs rounded overflow-hidden shadow-lg bg-white flex flex-col items-center gap-5 cursor-pointer hover:opacity-75'
+                className='max-w-xs overflow-hidden flex flex-col items-center cursor-pointer hover:opacity-75'
                 onClick={()=>navigate(`../meal/${item.idMeal}`)}>
                         <img src={item.strMealThumb} alt={item.strMeal}/>
                         <p>{item.strMeal}</p>
