@@ -21,7 +21,7 @@ const teamMembers = [
         name: "Cliffton James",
         pictureURL: "/assets/cliffton.jpg",
         bio: "Web developer that is  passionate about creating compelling and user-friendly web applications. In addition to my technical skills, I am also a creative content creator, a team player, and a continuous learner who is always seeking new opportunities to grow and improve.",
-        website: "jamcliffprofolio",
+        website: "jamcliffporfolio",
         websiteHref: "https://jamcliffprofolio.space/?nocache=1",
         github: "https://github.com/cliff82",
         linkedIn: "https://www.linkedin.com/in/cliffton-james-02a8197b/",
