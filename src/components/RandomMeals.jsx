@@ -24,7 +24,7 @@ const RandomMeals = () => {
     // console.log(randomMeals)
 
     return ( 
-        <section className="max-w-6xl mx-auto pl-10 pr-10">
+        <div className="max-w-6xl mx-auto pl-10 pr-10 mt-10 pb-10 border-b-2">
             <h3 className="w-full text-center text-3xl mb-10">Random Meal Selection</h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                 {loading && <Spinner />}
@@ -40,7 +40,7 @@ const RandomMeals = () => {
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
      );
 }
  

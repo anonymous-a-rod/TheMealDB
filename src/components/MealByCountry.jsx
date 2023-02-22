@@ -9,6 +9,7 @@ export default function MealByCountry() {
     const navigate = useNavigate(); 
     const [area, setArea] = useState([]);
     const countryCode = ['US', 'GB', 'CA', 'CN', 'HR', 'NL', 'EG', 'FR', 'GR', 'IN', 'IE', 'IT', 'JM', 'JP', 'KE', 'MY', 'MX', 'MA', 'PL', 'PT', 'RU', 'ES', 'TH','TN', 'TR', 'Unknown', 'VN'];
+    const isHomePage = window.location.pathname === "/";
 
     useEffect(()=>{
         const getData = async ()=>{
@@ -19,8 +20,8 @@ export default function MealByCountry() {
     }, []);
 
   return (
-    <div>
-        <h1 className='text-center text-3xl my-10 mt-20'>Meals by Country</h1>
+    <div className={`max-w-6xl mx-auto pl-10 pr-10 mt-10 pb-10 ${ isHomePage? "border-b-2" : ""}`}>
+        <h1 className='text-center text-3xl mb-10'>Meals by Country</h1>
         <div className='flex justify-center flex-wrap cursor-pointer text-2xl gap-2'>{
             area && area.map((item, index)=>{
                 return (countryCode[index] !== 'Unknown')?<div key={item.strArea} className='flex flex-col px-5 hover:opacity-75'>

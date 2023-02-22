@@ -5,7 +5,7 @@ const Team = () => {
 
     return ( 
         <section className="max-w-6xl mx-auto flex flex-col justify-center items-center">
-            <h2 className="text-4xl pb-8">Our Team</h2>
+            <h2 className="w-full text-center text-4xl mb-10 font-semibold">Our Team</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {data.map((item, index) => (
                 <article className="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs relative"

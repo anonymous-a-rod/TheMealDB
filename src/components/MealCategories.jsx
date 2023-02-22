@@ -5,8 +5,8 @@ import Spinner from "../components/Spinner";
 const MealCategories = () => {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
-
     const navigate = useNavigate();
+    const isHomePage = window.location.pathname === "/";
 
     useEffect(()=>{
 
@@ -23,9 +23,8 @@ const MealCategories = () => {
 
     // console.log(categories)
 
-
     return ( 
-        <section className="max-w-6xl mx-auto mt-10 mb-10 pl-10 pr-10">
+        <div className={`max-w-6xl mx-auto pl-10 pr-10 mt-10 pb-10 ${ isHomePage? "border-b-2" : ""}`}>
             <h3 className="w-full text-center text-3xl mb-10">Meal Categories</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-center items-center">
             {loading && <Spinner />}
@@ -39,7 +38,7 @@ const MealCategories = () => {
                 </div>
             ))}
             </div>
-        </section>
+        </div>
      );
 }
  
