@@ -9,7 +9,6 @@ const Meal = () => {
   const [loading, setLoading] = useState(true);
   const [tags, setTags] = useState([]);
   const [instructions, setInstructions] = useState([]);
-  const idMeal = useParams();
   const array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
   const param = useParams().idMeal;
 
@@ -61,7 +60,7 @@ const Meal = () => {
                         return (
                         <>
                             {index && meal[`strMeasure${index}`] && meal[`strIngredient${index}`] &&
-                            <div className="flex flex-col items-center">
+                            <div className="flex flex-col h-full justify-start flex-center">
                                 <img 
                                     src={`https://www.themealdb.com/images/ingredients/${meal[`strIngredient${index}`]}.png`} 
                                     alt={meal.strIngredient1}
