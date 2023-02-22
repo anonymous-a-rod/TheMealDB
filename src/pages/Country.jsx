@@ -24,7 +24,7 @@ export default function Country() {
 
   return (
     <section className="max-w-6xl mx-auto mt-10 mb-10 pl-10 pr-10">
-        <h1 className='w-full text-center text-4xl pb-8'>{country} Meals</h1>
+        <h1 className="w-full text-center text-4xl mb-10 font-semibold">{country} Meals</h1>
         {(display)?<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center'>
         { 
             meals.map((item, index)=>{

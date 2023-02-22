@@ -7,7 +7,7 @@ export default function MealByLetterSection() {
   const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
   return (
-    <section>
+    <div className="max-w-6xl mx-auto pl-10 pr-10 mt-10">
       <h1 className='text-center text-3xl my-10'>Meals by Letter</h1>
           <div className='flex justify-center flex-wrap cursor-pointer text-2xl gap-2'>
               {letters.map((item, index)=>{
@@ -17,6 +17,6 @@ export default function MealByLetterSection() {
                     </div>
               })}
           </div>
-    </section>
+    </div>
   )
 }

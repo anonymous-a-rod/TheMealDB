@@ -65,7 +65,7 @@ const Ingredients = () => {
 
     return ( 
         <section className="max-w-6xl mx-auto pl-10 pr-10">
-            <h3 className="w-full text-center text-5xl mb-10">{ingredient}</h3>
+            <h1 className="w-full text-center text-4xl mb-10 font-semibold">{ingredient}</h1>
             <div className="flex flex-row items-center justify-center mb-10 ml-10 mr-10">
                 <button className="text-6xl" onClick={prev}>
                     <GrPrevious /> 

@@ -25,7 +25,7 @@ const RandomIngredients = () => {
     // console.log(randomIngredients)
 
     return ( 
-        <section className="max-w-6xl mx-auto pl-10 pr-10">
+        <div className="max-w-6xl mx-auto pl-10 pr-10 mt-10 pb-10 border-b-2">
             <h3 className="w-full text-center text-3xl mb-10">Random Ingredients</h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center">
                 {loading && <Spinner />}
@@ -39,7 +39,7 @@ const RandomIngredients = () => {
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
      );
 }
  
