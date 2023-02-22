@@ -61,7 +61,7 @@ const Meal = () => {
                         return (
                         <>
                             {index && meal[`strMeasure${index}`] && meal[`strIngredient${index}`] &&
-                            <div className="flex flex-col items-center">
+                            <div className="flex flex-col h-full justify-start flex-center">
                                 <img 
                                     src={`https://www.themealdb.com/images/ingredients/${meal[`strIngredient${index}`]}.png`} 
                                     alt={meal.strIngredient1}
