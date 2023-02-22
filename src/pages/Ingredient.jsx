@@ -76,7 +76,7 @@ const Ingredients = () => {
                 </button>  
             </div>    
             { currentIngredient && <p className="mb-10 text-center">{currentIngredient[0].strDescription}</p>}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center mt-10">
+            <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center mt-10">
                 {loading && <Spinner/> }
                 {!loading && meals && meals.map((meal)=>(
                     <div className="flex flex-col items-center h-full justify-start"
