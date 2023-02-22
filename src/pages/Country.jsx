@@ -29,7 +29,7 @@ export default function Country() {
         { 
             meals.map((item, index)=>{
                 return <div key={item + index} 
-                className='max-w-xs overflow-hidden flex flex-col items-center cursor-pointer hover:opacity-75'
+                className='max-w-xs mx-auto overflow-hidden flex flex-col items-center cursor-pointer hover:opacity-75'
                 onClick={()=>navigate(`../meal/${item.idMeal}`)}>
                         <img src={item.strMealThumb} alt={item.strMeal}/>
                         <p>{item.strMeal}</p>
