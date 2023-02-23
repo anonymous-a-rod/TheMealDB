@@ -32,7 +32,7 @@ const teamMembers = [
   {
     name: "Kamil Watson",
     pictureURL: "/assets/kamil.jpg",
-    bio: "Talented graphic designer with print &amp; web design who is highly motivated, creative, and versatile. Specializing in creating corporate and new business design.",
+    bio: "I'm a BUILDER. Some use hammers & nails. I use keystrokes to CREATE SOLUTIONS that make the world a little more enjoyable. I'm a UI/UX Designer with nice coding SKILLZ (Javascript, React, Tailwind CSS and more). I'm highly motivated, creative, and versatile. Specializing in creating for mom & pops and new start-up builds.",
     website: "SayHelloToKam",
     websiteHref: "https://sayhellotokam.com",
     github: "https://github.com/SayHelloToKam",
