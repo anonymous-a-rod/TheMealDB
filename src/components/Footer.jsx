@@ -2,9 +2,14 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo-mealDB.svg";
 
 const Footer = () => {
+
+  const scrollToTop = ()=>{
+    window.scrollTo(0, 0); 
+  };
+
   return (
     <footer className='w-full h-48 border-t-[1px] border-gray-400 my-10 py-2 flex flex-col items-center'>
-      <Link to='/'>
+      <Link to='/' onClick={scrollToTop}>
         <img className='h-16 my-8' src={logo} alt='the mealdb' />
       </Link>
 
