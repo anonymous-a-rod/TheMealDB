@@ -48,6 +48,10 @@ export default function MealByCountry() {
     getData().catch((err) => console.log(err));
   }, []);
 
+  const scrollToTop = ()=>{
+    window.scrollTo(0, 0); 
+  };
+
   return (
     <div
       className={`max-w-6xl  mx-auto px-10 mb-16 pb-10 ${
@@ -67,7 +71,7 @@ export default function MealByCountry() {
                   src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${countryCode[index]}.svg`}
                   className='h-18 w-28 shadow-lg'
                   alt={item.strArea}
-                  onClick={() => navigate(`/country/${item.strArea}`)}
+                  onClick={()=>{navigate(`/country/${item.strArea}`);scrollToTop();}}
                 />
                 <label className=' text-stone-600 leading-3 text-sm text-center mt-1 mb-2'>
                   {item.strArea}
@@ -81,7 +85,7 @@ export default function MealByCountry() {
                 <TbFlag2Off
                   className='h-20 w-28 ml-5 mr-5 b-2  mt-[-11px] mb-[-5px]'
                   alt={item.strArea}
-                  onClick={() => navigate(`/country/${item.strArea}`)}
+                  onClick={()=>{navigate(`/country/${item.strArea}`);scrollToTop();}}
                 />
                 <label className='text-sm  text-stone-600 leading-6 text-center'>
                   {item.strArea}
