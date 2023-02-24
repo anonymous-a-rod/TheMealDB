@@ -71,27 +71,29 @@ const Ingredients = () => {
   // console.log(ingredientList)
 
   return (
-    <section className='max-w-4xl mx-auto px-10'>
-      <h1 className='w-full text-center text-stone-800 text-4xl my-10 font-semibold'>
-        {ingredient}
-      </h1>
-      <div className='flex flex-row items-center justify-center mb-10 ml-10 mr-10'>
-        <button className='text-4xl text-stone-800' onClick={prev}>
-          <GrPrevious />
-        </button>
-        <img
-          src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`}
-          alt={ingredient}
-        />
-        <button className='text-4xl text-stone-800' onClick={next}>
-          <GrNext />
-        </button>
-      </div>
+    <section className='max-w-6xl mx-auto px-10'>
+      <div className="max-w-4xl mx-auto">
+        <h1 className='w-full text-center text-stone-800 text-4xl my-10 font-semibold'>
+          {ingredient}
+        </h1>
+        <div className='flex flex-row items-center justify-center mb-10 ml-10 mr-10'>
+          <button className='text-4xl text-stone-800' onClick={prev}>
+            <GrPrevious />
+          </button>
+          <img
+            src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`}
+            alt={ingredient}
+          />
+          <button className='text-4xl text-stone-800' onClick={next}>
+            <GrNext />
+          </button>
+        </div>
       {currentIngredient && (
         <p className='text-stone-600 mb-10 text-center leading-loose'>
           {currentIngredient[0].strDescription}
         </p>
       )}
+      </div>
       <div className='grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center mt-10'>
         {loading && <Spinner />}
         {!loading &&
@@ -102,7 +104,7 @@ const Ingredients = () => {
               onClick={() => navigate(`../meal/${meal.idMeal}`)}
               key={meal.strMeal}
             >
-              <img src={meal.strMealThumb} alt={meal.strMeal} />
+              <img src={meal.strMealThumb} alt={meal.strMeal} className="rounded-full" />
               <label className='text-center'>{meal.strMeal}</label>
             </div>
           ))}

@@ -65,11 +65,11 @@ export default function MealByCountry() {
               >
                 <img
                   src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${countryCode[index]}.svg`}
-                  className='h-28 w-28'
+                  className='h-18 w-28 shadow-lg'
                   alt={item.strArea}
                   onClick={() => navigate(`/country/${item.strArea}`)}
                 />
-                <label className=' text-stone-600 leading-3 text-sm text-center mt-0'>
+                <label className=' text-stone-600 leading-3 text-sm text-center mt-1 mb-2'>
                   {item.strArea}
                 </label>
               </div>
@@ -79,7 +79,7 @@ export default function MealByCountry() {
                 className='flex flex-col hover:opacity-75 mt-2'
               >
                 <TbFlag2Off
-                  className='h-24 w-24'
+                  className='h-20 w-28 ml-5 mr-5 b-2  mt-[-11px] mb-[-5px]'
                   alt={item.strArea}
                   onClick={() => navigate(`/country/${item.strArea}`)}
                 />

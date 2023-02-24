@@ -41,7 +41,7 @@ const Category = () => {
               key={meal.idMeal}
             >
               <img
-                className=' rounded-full shadow-lg'
+                className='rounded-full shadow-lg'
                 src={meal.strMealThumb}
                 alt={meal.strMeal}
               />
