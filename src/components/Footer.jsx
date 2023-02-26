@@ -16,10 +16,10 @@ const Footer = () => {
       <div className='max-w-6xl mx-auto mb-16 flex justify-between h-full items-center text-xs'>
         <ul>
           <li className='inline p-4'>
-            <Link to='/about'>About</Link>
+            <Link to='/about' onClick={scrollToTop}>About</Link>
           </li>
           <li className='inline p-4'>
-            <Link to='/faq'>FAQ</Link>
+            <Link to='/faq' onClick={scrollToTop}>FAQ</Link>
           </li>
         </ul>
       </div>
