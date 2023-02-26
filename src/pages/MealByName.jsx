@@ -74,9 +74,6 @@ export default function MealByName() {
               </Link>{" "}
               to return to the home page or search again.
             </p>
-            // <p className='text-3xl capitalize text-center mb-8'>
-            //   - No {mealName} Meals -
-            // </p>
           )}
         </div>
       ) : (

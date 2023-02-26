@@ -131,7 +131,7 @@ const Meal = () => {
                 return (
                   <>
                     {instruction && (
-                      <p className='' key={instruction + Math.random()}>
+                      <p className='py-[1px]' key={instruction + Math.random()}>
                         <span className='font-semibold text-stone-800'>
                           Step {index + 1}:
                         </span>{" "}

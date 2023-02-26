@@ -114,12 +114,12 @@ const Ingredients = () => {
           meals &&
           meals.map((meal) => (
             <div
-              className='flex flex-col items-center h-full justify-start'
+              className='max-w-xs mx-auto overflow-hidden flex flex-col items-center cursor-pointer hover:opacity-75'
               onClick={() => navigate(`../meal/${meal.idMeal}`)}
               key={meal.strMeal}
             >
-              <img src={meal.strMealThumb} alt={meal.strMeal} className="rounded-full" />
-              <label className='text-center'>{meal.strMeal}</label>
+              <img src={meal.strMealThumb} alt={meal.strMeal} className='rounded-full drop-shadow-lg mb-4' />
+              <p className='text-stone-600 text-center'>{meal.strMeal}</p>
             </div>
           ))}
       </div>
