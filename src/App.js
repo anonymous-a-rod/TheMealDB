@@ -27,7 +27,7 @@ function App() {
             <Route exact path='/meal/:idMeal' element={<Meal />} />
             <Route exact path='/team' element={<Team />} />
             <Route exact path='/about' element={<About />} />
-            <Route exact path='/mealName/:mealName' element={<MealByName />} />
+            <Route exact path='/mealName/:name' element={<MealByName />} />
             <Route exact path='/category/:categoryName' element={<Category />} />
             <Route exact path='/ingredient/:ingredient' element={<Ingredient />} />
             <Route exact path='/country/:area' element={<Country />} />

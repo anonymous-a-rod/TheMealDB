@@ -11,9 +11,16 @@ export default function SearchForm() {
     navigate(`/mealName/${mealName}`)
   }
 
+  const handleInputKeyDown = (event) => {
+    if (event.key === "Enter") {
+      // Do something when the user presses Enter
+      handleSearchSubmit()
+    }
+  };
+
   return (
     <div className="flex rounded-full border-grey-light border">
-      <form className='flex justify-center'>
+      <div className='flex justify-center'>
         <button  
           onClick={handleSearchSubmit}
         >
@@ -27,9 +34,9 @@ export default function SearchForm() {
           placeholder="Find Your Meal" 
           value={mealName}
           onChange={(e)=>setMealName(e.target.value)}
-          onSubmit={handleSearchSubmit}
+          onKeyDown={handleInputKeyDown}
         />
-      </form>
+      </div>
     </div>
   );
 }
