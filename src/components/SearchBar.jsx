@@ -29,7 +29,7 @@ export default function SearchBar() {
           </span>
         </button>
         <input
-          className="w-32 rounded pl-0.5 mr-3 focus:outline-none"
+          className="w-32 rounded pl-1 mr-3 focus:outline-none"
           type="text"
           placeholder="Find Your Meal" 
           value={mealName}

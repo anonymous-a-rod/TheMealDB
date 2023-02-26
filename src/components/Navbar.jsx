@@ -16,7 +16,7 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <nav className='flex flex-reverse-row items-center gap-1'>
+        <nav className='flex flex-reverse-row justify-between sm:justify-start w-full sm:w-auto items-center gap-1'>
           <div className="mr-8 sm:mr-2">
             <SearchBar />
           </div>
