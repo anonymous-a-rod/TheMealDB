@@ -61,7 +61,7 @@ export default function MealByName() {
                       src={item.strMealThumb}
                       alt={item.strMeal}
                     />
-                    <p className='text-stone-600 mt-2'>{item.strMeal}</p>
+                    <p className='text-stone-600 mt-2 text-center'>{item.strMeal}</p>
                   </div>
                 );
               })}

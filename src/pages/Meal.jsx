@@ -125,7 +125,7 @@ const Meal = () => {
             </div>
           </div>
 
-          <div className='self-center max-w-2xl text-stone-600 text-center pt-10 pb-10'>
+          <div className='self-center max-w-2xl text-stone-600 text-center mt-10 mb-10'>
             {instructions &&
               instructions.map((instruction, index) => {
                 return (

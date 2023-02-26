@@ -56,7 +56,7 @@ export default function Country() {
                   src={item.strMealThumb}
                   alt={item.strMeal}
                 />
-                <p className='text-stone-600'>{item.strMeal}</p>
+                <p className='text-stone-600 text-center'>{item.strMeal}</p>
               </div>
             );
           })}
