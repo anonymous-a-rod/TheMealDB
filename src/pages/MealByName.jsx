@@ -22,11 +22,15 @@ export default function MealByName() {
     getData().catch((err) => console.log(err));
   }, [mealName]);
 
+  useEffect(()=>{
+    // console.log(meals)
+  },[meals,mealName])
+
   return (
     <div>
       {display ? (
         <div className='max-w-5xl mx-auto'>
-          <h1 className='w-full text-center text-4xl my-16 font-semibold text-stone-800'>
+          <h1 className='w-full capitalize text-center text-4xl my-16 font-semibold text-stone-800'>
             {mealName} Recipes
           </h1>
           {Array.isArray(meals) ? (
@@ -49,8 +53,8 @@ export default function MealByName() {
               })}
             </div>
           ) : (
-            <p className='text-3xl text-center mb-8'>
-              -No {mealName} Meals-
+            <p className='text-3xl capitalize text-center mb-8'>
+              - No {mealName} Meals -
             </p>
           )}
         </div>

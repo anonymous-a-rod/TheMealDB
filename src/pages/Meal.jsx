@@ -63,7 +63,7 @@ const Meal = () => {
                         {tag && (
                           <span
                             className='mb-4 inline-block px-2 py-1 mr-2 text-sm font-medium text-gray-800 bg-gray-200 rounded-full'
-                            key={tag}
+                            key={tag + Math.random()}
                           >
                             {tag}
                           </span>
@@ -84,13 +84,13 @@ const Meal = () => {
                         meal[`strIngredient${index}`] && (
                           <div
                             className='flex flex-col h-full justify-start flex-center'
-                            key={index * Math.floor(Math.random() * 1000)}
+                            key={`${meal[`strIngredient${index}`] + Math.random()}`}
                           >
                             <img
                               src={`https://www.themealdb.com/images/ingredients/${
                                 meal[`strIngredient${index}`]
                               }.png`}
-                              alt={meal.strIngredient1}
+                              alt={`${meal[`strIngredient${index}`]}`}
                               className=''
                             />
                             <p>
@@ -113,7 +113,7 @@ const Meal = () => {
                 return (
                   <>
                     {instruction && (
-                      <p className='' key={instruction}>
+                      <p className='' key={instruction + Math.random()}>
                         <span className='font-semibold text-stone-800'>
                           Step {index + 1}:
                         </span>{" "}

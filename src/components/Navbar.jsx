@@ -16,7 +16,10 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <nav className='flex flex-col items-center gap-1'>
+        <nav className='flex flex-reverse-row items-center gap-1'>
+          <div className="mr-2">
+            <SearchForm />
+          </div>
           <ul className='flex items-center'>
             <li className='p-2'>
               <Link to='/'>
@@ -28,10 +31,7 @@ const Navbar = () => {
                 <RiTeamLine className='text-2xl' />
               </Link>
             </li>
-          </ul>
-          <div>
-            <SearchForm />
-          </div>
+          </ul> 
         </nav>
       </div>
     </header>
