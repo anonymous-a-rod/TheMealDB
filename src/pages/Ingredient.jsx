@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { GrPrevious, GrNext } from "react-icons/gr";
-import { TbArrowBigUpLines } from "react-icons/tb";
+import ScrollArrow from "../components/ScrollArrow";
 
 const Ingredients = () => {
   const [meals, setMeals] = useState(null);
@@ -85,10 +85,7 @@ const Ingredients = () => {
 
   return (
     <section className='max-w-6xl mx-auto px-10'>
-      <div className={(arrowDisplay)?'flex flex-col items-center fixed bottom-5 right-5 md:right-10 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
-        <TbArrowBigUpLines className="text-6xl md:text-7xl"/>
-        <label className="text-sm">Back to top</label>
-      </div>
+      <ScrollArrow arrowDisplay={arrowDisplay} scrollToTop={scrollToTop} />
       <div className="max-w-4xl mx-auto">
         <h1 className='w-full text-center text-stone-800 text-4xl my-10 font-semibold'>
           {ingredient}

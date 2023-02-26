@@ -9,7 +9,7 @@ export const Banner = () => {
             Delicious Meal Inspiration <br />& Recipes
           </span>
           <p className='text-white mt-4'>
-            Explore by Category, Ingredient, Country, or First Letter
+            Explore by Category, Ingredient, Country, Name or First Letter
           </p>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import MealCategories from "../components/MealCategories";
+import ScrollArrow from "../components/ScrollArrow";
 import Spinner from "../components/Spinner";
-import { TbArrowBigUpLines } from "react-icons/tb";
 
 const Category = () => {
   const [meals, setMeals] = useState(null);
@@ -40,10 +40,7 @@ const Category = () => {
 
   return (
     <section className='max-w-6xl mx-auto pl-10 pr-10'>
-      <div className={(arrowDisplay)?'flex flex-col fixed bottom-5 right-5 md:right-20 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
-        <TbArrowBigUpLines className="text-7xl"/>
-        <label className="text-sm">Back to top</label>
-      </div>
+      <ScrollArrow arrowDisplay={arrowDisplay} scrollToTop={scrollToTop} />
       <h1 className='w-full text-center text-4xl my-16 font-semibold'>
         {categoryName}
       </h1>

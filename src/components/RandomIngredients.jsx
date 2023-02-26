@@ -17,9 +17,9 @@ const RandomIngredients = () => {
         .then((data) =>
           setRandomIngredients([
             data.meals[randomNumber],
-            data.meals[randomNumber * 2 + 1],
-            data.meals[randomNumber * 3 + 1],
-            data.meals[randomNumber * 4 + 1],
+            data.meals[(randomNumber + 1) * 2],
+            data.meals[(randomNumber + 1) * 3],
+            data.meals[(randomNumber + 1) * 4],
           ])
         );
     } catch (error) {

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import { TbArrowBigUpLines } from "react-icons/tb";
+import ScrollArrow from "../components/ScrollArrow";
 
 export default function MealByName() {
   let mealName = useParams().name;
@@ -41,10 +41,7 @@ export default function MealByName() {
 
   return (
     <div>
-      <div className={(arrowDisplay)?'flex flex-col items-center fixed bottom-5 right-5 md:right-10 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
-        <TbArrowBigUpLines className="text-6xl md:text-7xl"/>
-        <label className="text-sm">Back to top</label>
-      </div>
+      <ScrollArrow arrowDisplay={arrowDisplay} scrollToTop={scrollToTop} />
       {display ? (
         <div className='max-w-5xl mx-auto'>
           <h1 className='w-full capitalize text-center text-4xl my-16 font-semibold text-stone-800'>

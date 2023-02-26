@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 
-export default function SearchForm() {
+export default function SearchBar() {
   const navigate = useNavigate();
   const [mealName, setMealName] = useState("");
 

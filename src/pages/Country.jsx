@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import MealByCountry from "../components/MealByCountry";
 import Spinner from "../components/Spinner";
-import { TbArrowBigUpLines } from "react-icons/tb";
+import ScrollArrow from "../components/ScrollArrow";
 
 export default function Country() {
   const [arrowDisplay, setArrowDisplay] = useState(false); 
@@ -38,10 +38,7 @@ export default function Country() {
 
   return (
     <section className='max-w-6xl mx-auto my-16 px-10'>
-      <div className={(arrowDisplay)?'flex flex-col items-center fixed bottom-5 right-5 md:right-10 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
-        <TbArrowBigUpLines className="text-6xl md:text-7xl"/>
-        <label className="text-sm">Back to top</label>
-      </div>
+      <ScrollArrow arrowDisplay={arrowDisplay} scrollToTop={scrollToTop} />
       <h1 className='w-full text-center text-stone-800 text-4xl mb-10 font-semibold'>
         {country} Meals
       </h1>
