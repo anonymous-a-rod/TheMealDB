@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import ScrollArrow from "../components/ScrollArrow";
 
@@ -67,9 +67,16 @@ export default function MealByName() {
               })}
             </div>
           ) : (
-            <p className='text-3xl capitalize text-center mb-8'>
-              - No {mealName} Meals -
+            <p className="text-lg text-center mb-8 mt-8">
+              No meals found for "<span className="capitalize">{mealName}</span>".{" "}
+              <Link to="/" className="text-stone-700 font-bold">
+                Click here
+              </Link>{" "}
+              to return to the home page or search again.
             </p>
+            // <p className='text-3xl capitalize text-center mb-8'>
+            //   - No {mealName} Meals -
+            // </p>
           )}
         </div>
       ) : (
