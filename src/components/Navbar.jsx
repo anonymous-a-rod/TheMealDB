@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/logo-mealDB.svg";
+import SearchForm from "./SearchForm";
 import { RiTeamLine, RiHome2Line } from "react-icons/ri";
 
 const Navbar = () => {
@@ -15,7 +16,10 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <nav>
+        <nav className='flex flex-reverse-row items-center gap-1'>
+          <div className="mr-2">
+            <SearchForm />
+          </div>
           <ul className='flex items-center'>
             <li className='p-2'>
               <Link to='/'>
@@ -27,7 +31,7 @@ const Navbar = () => {
                 <RiTeamLine className='text-2xl' />
               </Link>
             </li>
-          </ul>
+          </ul> 
         </nav>
       </div>
     </header>
