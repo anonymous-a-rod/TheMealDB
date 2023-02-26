@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import MealCategories from "../components/MealCategories";
 import Spinner from "../components/Spinner";
+import { TbArrowBigUpLines } from "react-icons/tb";
 
 const Category = () => {
   const [meals, setMeals] = useState(null);
   const [loading, setLoading] = useState(true);
   const categoryName = useParams().categoryName;
   const navigate = useNavigate();
+  const [arrowDisplay, setArrowDisplay] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -23,10 +25,25 @@ const Category = () => {
     setLoading(false);
   }, [categoryName]);
 
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      (window.scrollY > 500)
+      ?setArrowDisplay(true):setArrowDisplay(false);
+    })
+  }, [arrowDisplay]);
+
+  const scrollToTop = ()=>{
+    window.scrollTo({top:0, behavior:'smooth'}); 
+  };
+
   // console.log(meals)
 
   return (
     <section className='max-w-6xl mx-auto pl-10 pr-10'>
+      <div className={(arrowDisplay)?'flex flex-col fixed bottom-5 right-5 md:right-20 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
+        <TbArrowBigUpLines className="text-7xl"/>
+        <label className="text-sm">Back to top</label>
+      </div>
       <h1 className='w-full text-center text-4xl my-16 font-semibold'>
         {categoryName}
       </h1>

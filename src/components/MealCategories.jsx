@@ -20,6 +20,10 @@ const MealCategories = () => {
     setLoading(false);
   }, []);
 
+  const scrollToTop = ()=>{
+    window.scrollTo({top:0}); 
+  };
+
   // console.log(categories)
 
   return (
@@ -37,7 +41,7 @@ const MealCategories = () => {
           categories.map((category) => (
             <div
               className='flex items-center flex-col cursor-pointer'
-              onClick={() => navigate(`../category/${category.strCategory}`)}
+              onClick={() => {navigate(`../category/${category.strCategory}`);scrollToTop();}}
               key={category.strCategory}
             >
               <img src={category.strCategoryThumb} alt={category.strCategory} />

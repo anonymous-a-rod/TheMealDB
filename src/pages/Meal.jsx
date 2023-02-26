@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import { TbArrowBigUpLines } from "react-icons/tb";
 
 const Meal = () => {
   const [meal, setMeal] = useState(null);
   const [loading, setLoading] = useState(true);
   const [tags, setTags] = useState([]);
   const [instructions, setInstructions] = useState([]);
+  const [arrowDisplay, setArrowDisplay] = useState(false);
   const array = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
   ];
@@ -35,6 +37,17 @@ const Meal = () => {
     }
   }, [meal]);
 
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      (window.scrollY > 500)
+      ?setArrowDisplay(true):setArrowDisplay(false);
+    })
+  }, [arrowDisplay]);
+
+  const scrollToTop = ()=>{
+    window.scrollTo({top:0, behavior:'smooth'}); 
+  };
+
   //   console.log(meal)
 
   if (loading) {
@@ -43,6 +56,10 @@ const Meal = () => {
 
   return (
     <>
+      <div className={(arrowDisplay)?'flex flex-col items-center fixed bottom-5 right-5 md:right-10 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
+        <TbArrowBigUpLines className="text-6xl md:text-7xl"/>
+        <label className="text-sm">Back to top</label>
+      </div>
       {meal && (
         <section className='max-w-6xl mx-auto pl-10 pr-10 flex flex-col'>
           <div className='text-center flex flex-col items-center md:flex-row '>
