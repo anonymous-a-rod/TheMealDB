@@ -31,6 +31,9 @@ export default function MealByLetterSection() {
     "Y",
     "Z",
   ];
+  const scrollToTop = ()=>{
+    window.scrollTo({top:0}); 
+  };
 
   return (
     <div className='max-w-6xl mx-auto px-10 mt-10'>
@@ -40,7 +43,7 @@ export default function MealByLetterSection() {
           return (
             <div key={item} className='flex justify-center gap-2'>
               <p
-                onClick={() => navigate(`/letter/${item}`)}
+                onClick={() => {navigate(`/letter/${item}`);scrollToTop();}}
                 className=' text-stone-600 hover:text-green-600 hover:text-xl'
               >
                 {item}

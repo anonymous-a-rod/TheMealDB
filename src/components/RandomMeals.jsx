@@ -21,6 +21,10 @@ const RandomMeals = () => {
     setLoading(false);
   }, [randomMeals]);
 
+  const scrollToTop = ()=>{
+    window.scrollTo({top:0}); 
+  };
+
   // console.log(randomMeals)
 
   return (
@@ -35,7 +39,7 @@ const RandomMeals = () => {
           [...new Set(randomMeals)].slice(0, 4).map((meal, index) => (
             <div
               className='flex flex-col h-full w-full cursor-pointer'
-              onClick={() => navigate(`../meal/${meal.idMeal}`)}
+              onClick={() => {navigate(`../meal/${meal.idMeal}`);scrollToTop();}}
               key={index}
             >
               <img

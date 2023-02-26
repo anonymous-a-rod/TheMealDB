@@ -27,22 +27,20 @@ export default function Country() {
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      if (window.scrollY > 500) {
-        setArrowDisplay(true); 
-      } else {
-        setArrowDisplay(false);
-      }
+      (window.scrollY > 500)
+      ?setArrowDisplay(true):setArrowDisplay(false);
     })
   }, [arrowDisplay]);
 
   const scrollToTop = ()=>{
-    window.scrollTo(0, 0); 
+    window.scrollTo({top:0, behavior:'smooth'}); 
   };
 
   return (
     <section className='max-w-6xl mx-auto my-16 px-10'>
-      <div className={(arrowDisplay)?'flex fixed bottom-20 right-10 cursor-pointer':'hidden'} onClick={scrollToTop}>
-        <TbArrowBigUpLines className="text-7xl ease-in-out duration-300"/>
+      <div className={(arrowDisplay)?'flex flex-col items-center fixed bottom-5 right-5 md:right-10 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
+        <TbArrowBigUpLines className="text-6xl md:text-7xl"/>
+        <label className="text-sm">Back to top</label>
       </div>
       <h1 className='w-full text-center text-stone-800 text-4xl mb-10 font-semibold'>
         {country} Meals

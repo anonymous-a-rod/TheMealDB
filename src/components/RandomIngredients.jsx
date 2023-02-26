@@ -29,6 +29,10 @@ const RandomIngredients = () => {
     setLoading(false);
   }, []);
 
+  const scrollToTop = ()=>{
+    window.scrollTo({top:0}); 
+  };
+
   // console.log(randomIngredients)
 
   return (
@@ -44,7 +48,7 @@ const RandomIngredients = () => {
             <div
               className='flex flex-col items-center  cursor-pointer'
               onClick={() =>
-                navigate(`../ingredient/${ingredient.strIngredient}`)
+                {navigate(`../ingredient/${ingredient.strIngredient}`);scrollToTop();}
               }
               key={ingredient.strIngredient}
             >
