@@ -7,8 +7,10 @@ export default function SearchBar() {
   const navigate = useNavigate();
   const [mealName, setMealName] = useState("");
 
+
   const handleSearchSubmit = () => {
     navigate(`/mealName/${mealName}`)
+    setMealName("")
   }
 
   const handleInputKeyDown = (event) => {
