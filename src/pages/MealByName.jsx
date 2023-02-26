@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
 export default function MealByName() {
-  let mealName = useParams().mealName;
+  let mealName = useParams().name;
   const [meals, setMeals] = useState([]);
   const navigate = useNavigate();
   const [display, setDisplay] = useState(true);
