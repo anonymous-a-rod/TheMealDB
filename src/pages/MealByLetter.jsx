@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom/dist";
 import Spinner from "../components/Spinner";
 import MealByLetterSection from "../components/MealByLetterSection";
-import { TbArrowBigUpLines } from "react-icons/tb";
+import ScrollArrow from "../components/ScrollArrow";
 
 export default function MealByLetter() {
   let letter = useParams().curr;
@@ -39,12 +39,9 @@ export default function MealByLetter() {
 
   return (
     <div>
-      <div className={(arrowDisplay)?'flex flex-col items-center fixed bottom-5 right-5 md:right-10 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
-        <TbArrowBigUpLines className="text-6xl md:text-7xl"/>
-        <label className="text-sm">Back to top</label>
-      </div>
+      <ScrollArrow arrowDisplay={arrowDisplay} scrollToTop={scrollToTop} />
       {display ? (
-        <div className='max-w-5xl mx-auto'>
+        <div className='max-w-5xl mx-auto mb-10'>
           <h1 className='w-full text-center text-4xl my-16 font-semibold text-stone-800'>
             Recipes that start with {letter}
           </h1>
@@ -62,7 +59,7 @@ export default function MealByLetter() {
                       src={item.strMealThumb}
                       alt={item.strMeal}
                     />
-                    <p className='text-stone-600 mt-2'>{item.strMeal}</p>
+                    <p className='text-stone-600 mt-2 text-center'>{item.strMeal}</p>
                   </div>
                 );
               })}

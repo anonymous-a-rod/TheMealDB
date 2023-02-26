@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ScrollArrow from "../components/ScrollArrow";
 import Spinner from "../components/Spinner";
-import { TbArrowBigUpLines } from "react-icons/tb";
+
 
 const Meal = () => {
   const [meal, setMeal] = useState(null);
@@ -32,7 +33,10 @@ const Meal = () => {
         setTags(meal.strTags.split(","));
       }
       if (meal.strInstructions && meal.strInstructions !== " ") {
-        setInstructions(meal.strInstructions.split("."));
+        let tempInstructions = meal.strInstructions.replace(/\r\n\r\n[0-9]/g,"").replace(/\r\n[0-9]/g,"")
+        tempInstructions = tempInstructions.replace(/STEP \d+/g,"")
+        tempInstructions = tempInstructions.split(".")
+        setInstructions(tempInstructions);
       }
     }
   }, [meal]);
@@ -48,7 +52,7 @@ const Meal = () => {
     window.scrollTo({top:0, behavior:'smooth'}); 
   };
 
-  //   console.log(meal)
+    console.log(meal)
 
   if (loading) {
     return <Spinner />;
@@ -56,10 +60,7 @@ const Meal = () => {
 
   return (
     <>
-      <div className={(arrowDisplay)?'flex flex-col items-center fixed bottom-5 right-5 md:right-10 md:bottom-20 cursor-pointer z-10 transition-all delay-150':'fixed bottom-5 -right-20 md:bottom-20 md:-right-20 transition-all delay-150'} onClick={scrollToTop}>
-        <TbArrowBigUpLines className="text-6xl md:text-7xl"/>
-        <label className="text-sm">Back to top</label>
-      </div>
+      <ScrollArrow arrowDisplay={arrowDisplay} scrollToTop={scrollToTop} />
       {meal && (
         <section className='max-w-6xl mx-auto pl-10 pr-10 flex flex-col'>
           <div className='text-center flex flex-col items-center md:flex-row '>
@@ -124,13 +125,13 @@ const Meal = () => {
             </div>
           </div>
 
-          <div className='self-center max-w-2xl text-stone-600 text-center pt-10 pb-10'>
+          <div className='self-center max-w-2xl text-stone-600 text-center mt-10 mb-10'>
             {instructions &&
               instructions.map((instruction, index) => {
                 return (
                   <>
                     {instruction && (
-                      <p className='' key={instruction + Math.random()}>
+                      <p className='py-[1px]' key={instruction + Math.random()}>
                         <span className='font-semibold text-stone-800'>
                           Step {index + 1}:
                         </span>{" "}

@@ -65,7 +65,7 @@ export default function MealByCountry() {
             return countryCode[index] !== "Unknown" ? (
               <div
                 key={item.strArea}
-                className='flex flex-col px-5 hover:opacity-75'
+                className='flex flex-col px-5'
               >
                 <img
                   src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${countryCode[index]}.svg`}
@@ -80,7 +80,7 @@ export default function MealByCountry() {
             ) : (
               <div
                 key={item.strArea}
-                className='flex flex-col hover:opacity-75 mt-2'
+                className='flex flex-col mt-2'
               >
                 <TbFlag2Off
                   className='h-20 w-28 ml-5 mr-5 b-2  mt-[-11px] mb-[-5px]'

@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 
-export default function SearchForm() {
+export default function SearchBar() {
   const navigate = useNavigate();
   const [mealName, setMealName] = useState("");
 
@@ -29,7 +29,7 @@ export default function SearchForm() {
           </span>
         </button>
         <input
-          className="w-32 rounded pl-0.5 mr-3 focus:outline-none"
+          className="w-32 rounded pl-1 mr-3 focus:outline-none"
           type="text"
           placeholder="Find Your Meal" 
           value={mealName}
