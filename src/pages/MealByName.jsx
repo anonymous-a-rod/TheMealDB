@@ -43,7 +43,7 @@ export default function MealByName() {
     <div>
       <ScrollArrow arrowDisplay={arrowDisplay} scrollToTop={scrollToTop} />
       {display ? (
-        <div className='max-w-5xl mx-auto'>
+        <div className='max-w-5xl mx-auto mb-10'>
           <h1 className='w-full capitalize text-center text-4xl my-16 font-semibold text-stone-800'>
             {mealName} Recipes
           </h1>

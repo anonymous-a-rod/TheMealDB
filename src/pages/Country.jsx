@@ -43,7 +43,7 @@ export default function Country() {
         {country} Meals
       </h1>
       {display ? (
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center mb-10'>
           {meals.map((item, index) => {
             return (
               <div

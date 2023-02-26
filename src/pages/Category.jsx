@@ -44,7 +44,7 @@ const Category = () => {
       <h1 className='w-full text-center text-4xl my-16 font-semibold'>
         {categoryName}
       </h1>
-      <div className='grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center'>
+      <div className='grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center mb-10'>
         {loading && <Spinner />}
         {!loading &&
           meals &&
