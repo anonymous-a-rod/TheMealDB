@@ -12,6 +12,7 @@ import Category from './pages/Category';
 import Ingredient from './pages/Ingredient';
 import MealByLetter from './pages/MealByLetter';
 import Country from './pages/Country';
+import MealByName from './pages/MealByName';
 
 
 
@@ -26,6 +27,7 @@ function App() {
             <Route exact path='/meal/:idMeal' element={<Meal />} />
             <Route exact path='/team' element={<Team />} />
             <Route exact path='/about' element={<About />} />
+            <Route exact path='/mealName/:mealName' element={<MealByName />} />
             <Route exact path='/category/:categoryName' element={<Category />} />
             <Route exact path='/ingredient/:ingredient' element={<Ingredient />} />
             <Route exact path='/country/:area' element={<Country />} />
