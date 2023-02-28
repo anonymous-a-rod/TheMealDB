@@ -11,7 +11,7 @@ const Question = ({question,answer}) => {
                 <div className='rounded-full p-2'>{showAnswer? <AiOutlineMinus /> : <AiOutlinePlus /> }</div>
             </button>
             </header>
-            { showAnswer && <p className='pr-16 mb-4 pl-2'>{answer}</p>}
+            { showAnswer && <p className='pr-16 mb-4 pl-2 text-stone-600'>{answer}</p>}
         </article>
      );
 }
