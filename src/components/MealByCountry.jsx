@@ -14,6 +14,7 @@ export default function MealByCountry() {
     "CN",
     "HR",
     "NL",
+    "PH",
     "EG",
     "FR",
     "GR",
